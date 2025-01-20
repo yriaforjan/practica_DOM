@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://127.0.0.1:5500/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./PcComponentes.com _ Tienda de Informática y Tecnología online_files/style.css">
+    <script src="./PcComponentes.com _ Tienda de Informática y Tecnología online_files/main.js" defer=""></script>
+    <title>PcComponentes.com | Tienda de Informática y Tecnología online</title>
+</head>
+<body cz-shortcut-listen="true">
+    <header></header>
+    <main></main>
+    <footer></footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+
+<a id="logo" href="http://127.0.0.1:5500/index.html">
+    <img src="./PcComponentes.com _ Tienda de Informática y Tecnología online_files/PcComponentes_logo.png" alt="PcComponentes logo">
+</a>
+<section id="menu">
+    <img src="./PcComponentes.com _ Tienda de Informática y Tecnología online_files/burger_menu.svg" alt="burger menu icon">
+    <p>Todas las categorías</p>
+</section>
+<section id="search">
+    <select name="catalog" id="catalog">
+        <option value="all">Todo el catálogo</option>
+        <option value="reconditioned">Reacondicionados</option>
+    </select>
+    <input type="search" name="searchingBar" id="searchingBar" placeholder="Buscar">
+</section>
+<a href="https://www.pccomponentes.com/login?_gl=1*1eljdpj*_up*MQ..&amp;gclid=Cj0KCQiA1p28BhCBARIsADP9HrOLzUuvhJYE3tLxYEdmo4pPFbMyexZtDFhUQ9ciZ1skPjBQGrXuNq4aApfNEALw_wcB">
+    <img src="http://127.0.0.1:5500/index.html" alt="">
+    <p>Mi cuenta</p>
+</a>
+<a href="http://127.0.0.1:5500/index.html#">
+    <img src="http://127.0.0.1:5500/index.html" alt="">
+    <p>Mi cesta</p>
+</a>
+</body></html>
