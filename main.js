@@ -205,9 +205,121 @@ mainSection.innerHTML = `
     </section>
 </div>
 <div id="mainContent">
-    <section id="products">
-        <h2>Pc</h2>
-    </section>
 </div>
 `
 
+const mainContent = document.querySelector("#mainContent");
+const filterList = document.createElement("ul");
+filterList.id = "filterList";
+
+const filters = [
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/07/ad28335d-240f-4409-b46c-3bfb39cbac14/6318b861-df0a-429e-80d6-a8978779dfd6-asistente.png",
+        imageDescription: "PC gaming",
+        name: "Jugadores ocasionales"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/07/0e115758-4246-4878-ab56-5de404aabdb5/bd34f870-70e6-4b36-86c9-58b5a0373f27-asistente.png",
+        imageDescription: "PC gaming",
+        name: "Jugadores entusiastas"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/07/d48df333-efe9-44f2-83c6-04e737acc167/c29e2a47-0266-47cf-972d-4b470c68dcb7-asistente.png",
+        imageDescription: "PC gaming",
+        name: "Jugadores profesionales"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2024/12/20/6028be7a-d516-40d9-8041-c67af477902f/b9116bc1-6ed5-4bfc-89eb-18921ec123bf-asistente.png",
+        imageDescription: "PC",
+        name: "Estudiantes o trabajadores"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/03/a34ef4fe-463f-41a8-88fc-45b787cdd177/eb9e34f4-6720-4efc-8a00-162b46c06efa-asistente.png",
+        imageDescription: "PC",
+        name: "Uso básico con Windows instalado"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2024/12/20/c1f1d17e-c24e-4db5-b4e7-3ec029adabe7/eab06227-7425-4f7c-b937-0197b521933b-asistente.png",
+        imageDescription: "PC",
+        name: "Compactos ultrafinos"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2024/12/20/0433cf9c-68bc-4192-9d1e-194af80272b9/0a6a5a9a-061c-4f8e-bbee-7b8b9b689c8d-asistente.png",
+        imageDescription: "PC",
+        name: "Edición y diseño premium"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/bf3561a3-2059-49f3-8999-dfbcd06c497d/9b773cca-b7ab-4637-9d94-0926832b01ff-asistente.png",
+        imageDescription: "refurbished computer icon",
+        name: "Reacondicionados gaming"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/63aeb181-6b00-42c4-827a-5baf2a2f7f36/7ee718c6-11ee-4103-9a5d-5eaa7c7b52b7-asistente.jpeg",
+        imageDescription: "refurbished computer icon",
+        name: "Reacondicionados ofimática"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2024/09/25/438bf954-1388-4278-b060-2269e44797c0/e3248d11-84c4-47d3-a4a5-a8dae44aabc6-asistente.png",
+        imageDescription: "Apple logo",
+        name: "Mac"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/1d4d2317-3428-4360-9205-4c8e845566f3/7cba9279-2afb-4bd3-abba-df206d1b341a-asistente.jpeg",
+        imageDescription: "MSI logo",
+        name: "MSI"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/326f0a60-ec4a-4259-bb3a-e73f98999cc1/9628104f-d7ce-4e3a-97a9-f1dc29ca87f7-asistente.jpeg",
+        imageDescription: "HP logo",
+        name: "HP"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/ff2e9596-96e3-4f5e-b393-249c8da95eb0/50913834-7c39-4f2a-8e66-2d6758c01ffc-asistente.jpeg",
+        imageDescription: "Asus logo",
+        name: "Asus"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/88d395d3-00c4-4b5a-b7c4-d40c9a57a79d/c285bc2a-a11d-4181-8325-81644b73812c-asistente.jpeg",
+        imageDescription: "Lenovo logo",
+        name: "Lenovo"
+    },
+    {
+        image: "https://assets.pccomponentes.com/files/2025/01/13/948ad4f1-ec82-473e-a14f-da6c88248104/e3622069-21f7-481a-b2c2-b81dcb20477f-asistente.jpeg",
+        imageDescription: "Acer logo",
+        name: "Acer"
+    },
+];
+
+for (const filter of filters) {
+    const filterElement = document.createElement("li");
+    filterElement.innerHTML = `
+    <div>
+        <img src="${filter.image}" alt="${filter.imageDescription}"/>
+    </div>
+    <p>${filter.name}</p>
+    `
+    filterList.appendChild(filterElement);
+}
+
+mainContent.appendChild(filterList);
+
+const compare = document.createElement("div");
+compare.id="compare";
+const compareBtn = document.createElement("button");
+compareBtn.innerText = "Comparar";
+compare.appendChild(compareBtn);
+const comparisonElements = document.createElement("ul");
+comparisonElements.innerHTML = `
+    <li class="selected">Relevancia</li>
+    <li>Precio más bajo</li>
+    <li>Precio más alto</li>
+    <li>Más vendidos</li>
+    <li>Oferta</li>
+    <li>Mejor valorados</li>
+    <li>Novedades</li>
+`
+compare.appendChild(comparisonElements);
+const productCounter = document.createElement("p");
+productCounter.innerText = "2325 artículos";
+compare.appendChild(productCounter);
+mainContent.appendChild(compare);
